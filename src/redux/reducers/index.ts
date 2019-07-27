@@ -1,4 +1,5 @@
 import * as types from '../constants/types';
+import { combineReducers } from 'redux';
 const initialState = {
     questions : []
 }
@@ -14,3 +15,7 @@ export const getQuestionsReducer = ( state:any = initialState , action:any) => {
             return state;
     }
 }
+
+export default combineReducers({
+    getQuestionsReducer
+})

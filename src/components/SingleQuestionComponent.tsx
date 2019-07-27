@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Grid,Radio } from 'semantic-ui-react';
+import { connect } from 'react-redux'
 
 
-export default class SingleQuestionComponent extends Component {
+class SingleQuestionComponent extends Component {
 
     createRadios = () => {
         const ret = [
@@ -38,3 +39,9 @@ export default class SingleQuestionComponent extends Component {
         )
     }
 }
+
+const mapStateToProps = (state:any, ownProps:any) => console.log({
+        state
+});
+
+export default connect(mapStateToProps,{})(SingleQuestionComponent);
