@@ -1,33 +1,50 @@
-.App {
+.questionBox{
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 127px !important;
+  width:740px !important;
+}
+
+.questionTitle{
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.radioBox{
+  height: 30px;
+  width: 570px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.radio{
+  margin : 2%;
+  vertical-align: middle;
+ 
 }
 
-.App-link {
-  color: #61dafb;
-}
+.disagree{
+  font-family: Nunito;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 19px;
+text-align: right;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+color: #FA4344;
+vertical-align: middle !important;
+}
+.agree{
+  font-family: Nunito;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 19px;
+
+color: #00A079;
+
 }
