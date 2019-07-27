@@ -1,10 +1,10 @@
 import * as types from '../constants/types';
 import { combineReducers } from 'redux';
 const initialState = {
-    questions : []
+    questions : [],
 }
 
-export const getQuestionsReducer = ( state:any = initialState , action:any) => {
+export const reducer = ( state:any = initialState , action:any) => {
     switch ( action.type ){
         case types.GETQUESTIONS:
             return {
@@ -17,5 +17,5 @@ export const getQuestionsReducer = ( state:any = initialState , action:any) => {
 }
 
 export default combineReducers({
-    getQuestionsReducer
+    reducer
 })
