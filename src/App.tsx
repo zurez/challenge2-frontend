@@ -13,7 +13,7 @@ const App: React.FC = () => {
   return (
     <Provider store={store} >
       <Router>
-        <Route path="/" component={LandingComponent} />
+        <Route exact path="/" component={LandingComponent} />
         <Route path="/result" component={ResultComponent} />
       </Router>
     </Provider>

@@ -13,17 +13,22 @@ export function* watchForGetQuestions(){
 
 export function* onForSaveResponses(request:any){
     const result = yield call(saveResponse,request);
-    console.log(result);
-    yield put(onSaveResponseAction(result));
+    yield put(onSaveResponseAction(result,request));
+    
 }
 
 export function* watchForSaveResponses(){
     yield takeEvery(types.SAVERESPONSES,onForSaveResponses);
 }
 
+export function* watchForResult(){
+    yield '';
+}
+
 export default function* rootSaga(){
     yield all([
         watchForGetQuestions(),
-        watchForSaveResponses()
+        watchForSaveResponses(),
+        watchForResult(),
     ]);
 }

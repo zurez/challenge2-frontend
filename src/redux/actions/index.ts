@@ -5,7 +5,9 @@ export const getQuestionsAction = ( result:any ) => ({
     result
 });
 
-export const onSaveResponseAction = ( result:any ) => ({
+export const onSaveResponseAction = ( result:any ,responses:any) => ({
     type: types.ONSAVERESPONSES,
-    result: result.data
+    result: result.data,
 })
+
+

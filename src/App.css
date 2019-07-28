@@ -154,3 +154,14 @@ body {
 	margin-top: 1%;
 	
 }
+.resultBox{
+	background: #FFFFFF;
+	border: 1px solid #E5E5E5;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-top:4%;
+	width : 90% !important;
+	margin-left:auto !important;
+	margin-right: auto !important;
+	height: 270px;
+}

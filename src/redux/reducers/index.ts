@@ -4,7 +4,8 @@ import { combineReducers } from 'redux';
 const initialState = {
     questions : [],
     redirectStatus:"",
-    data :{}
+    data :{},
+    responses:{}
 }
 export const reducer = ( state:any = initialState , action:any) => {
     switch ( action.type ){
@@ -21,7 +22,8 @@ export const reducer = ( state:any = initialState , action:any) => {
         case types.ONSAVERESPONSES:
             return {
                 ...state,
-                redirectStatus : action.result.status
+                redirectStatus : action.result.status,
+                personalityType : action.result.personalityType
             }
         default:
             return state;
