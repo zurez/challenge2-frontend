@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
 import QuestionComponent from './SingleQuestionComponent';
-export default class LandingComponent extends Component {
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux'
+
+interface Props{
+    onSaveResponseStatus : string
+}
+
+class LandingComponent extends Component<Props> {
     render() {
+        if(this.props.onSaveResponseStatus === "success"){
+            return <Redirect to='/result' />
+        }
         return (
             <span>
                 <div className="landingTitle roboto container title">
@@ -16,3 +26,9 @@ export default class LandingComponent extends Component {
         )
     }
 }
+
+const mapStateToProps = (state:any, ownProps:any) => ({
+    onSaveResponseStatus: state.reducer.redirectStatus
+})
+
+export default connect(mapStateToProps,{})(LandingComponent);

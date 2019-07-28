@@ -7,5 +7,5 @@ export const getQuestionsAction = ( result:any ) => ({
 
 export const onSaveResponseAction = ( result:any ) => ({
     type: types.ONSAVERESPONSES,
-    result
+    result: result.data
 })

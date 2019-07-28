@@ -13,6 +13,7 @@ export function* watchForGetQuestions(){
 
 export function* onForSaveResponses(request:any){
     const result = yield call(saveResponse,request);
+    console.log(result);
     yield put(onSaveResponseAction(result));
 }
 

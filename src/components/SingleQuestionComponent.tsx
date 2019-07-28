@@ -4,10 +4,14 @@ import { RadioInput } from './RadioComponent';
 import { SaveAndContinue } from './SaveAndContinueComponent';
 import { EmailInput } from './EmailInputComponent';
 import { validateEmail } from '../helper';
+import * as types from '../redux/constants/types';
+import { onSaveResponseAction } from '../redux/actions';
+import { Redirect } from 'react-router-dom';
 
 interface Props{
     dispatcher : any,
-    questions : Array<any>
+    questions : Array<any>,
+    
 }
 
 interface States{
@@ -62,8 +66,11 @@ class QuestionComponent extends Component<Props,States> {
         const responses = this.state.responses;
         let modified = false;
         responses.map( ( e,i ) => {
+            
             if(e.question_id === event.target.name){
+               
                 responses[i]['value'] = event.target.value;
+                modified = true;
             }
         });
         if(!modified){
@@ -77,18 +84,20 @@ class QuestionComponent extends Component<Props,States> {
     dispatcher = () => {
         
         let errors =  [];
-        console.log({r:this.state.responses});
-        if(this.state.responses.length != 7){
+   
+        if(this.state.responses.length !== 10){
             errors.push('Please make sure you have answered all the questions.');
         }
         if(!this.state.email || !validateEmail(this.state.email)){
             errors.push('Please input a valid email address.')
         }
         this.setState({errors});
+        
         if(errors.length>0){
             return false;
         }
-        console.log(this.state.responses)
+        const {responses,email} = this.state;
+        this.props.dispatcher({responses,email});
     }
     questions = () => {
         let ret: Array<any> = [];
@@ -100,11 +109,17 @@ class QuestionComponent extends Component<Props,States> {
     }
 
     inputEmail = (event:any) => {
-        this.setState({email:event.target.value,errors:[]});
+        const email = event.target.value;
+        
+        this.setState({email,errors:[]});
+        
+        
     }
 
     render() {
         const questions = this.questions();
+        
+        
         return (
             <div className="main-container">
                 {questions}
@@ -128,11 +143,17 @@ class QuestionComponent extends Component<Props,States> {
     }
 }
 
-const mapStateToProps = (state:any, ownProps:any) => ({
+const mapStateToProps = (state:any, ownProps:any) =>
+{
+    
+    return ({
         questions: state.reducer.questions,
-});
+        
+
+    })
+};
 
 const mapDispatchToProps = (dispatch:Function) => ({
-    dispatcher: () => dispatch({type : "CLICK" , value : "lol"})
+    dispatcher: (data:any) => dispatch({type : types.SAVERESPONSES,email:data.email,responses:data.responses })
 });
 export default connect(mapStateToProps,mapDispatchToProps)(QuestionComponent);

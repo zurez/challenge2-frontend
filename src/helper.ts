@@ -1,4 +1,3 @@
-
 // https://www.w3resource.com/javascript/form/email-validation.php
 export function validateEmail(email:string) 
 {
