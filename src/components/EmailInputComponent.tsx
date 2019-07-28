@@ -9,7 +9,10 @@ export const EmailInput = (props:any) => {
         <div className="ui form warning">
             <div className="field mrgn-tp20">
 
-                <input type="email" placeholder="you@example.com" className="emailInput"/>
+                <input type="email" placeholder="you@example.com" 
+                className="emailInput"
+                onChange = {(e:any) => props.inputEmail(e)}
+                />
             </div>
 
         </div>
