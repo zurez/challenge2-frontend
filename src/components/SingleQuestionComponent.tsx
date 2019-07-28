@@ -53,7 +53,7 @@ class QuestionComponent extends Component<Props> {
             <div className="main-container">
                 {questions}
                 <EmailInput/>
-                <SaveAndContinue/>
+                <SaveAndContinue dispatcher = {this.props.dispatcher} />
                 
             </div>
                
