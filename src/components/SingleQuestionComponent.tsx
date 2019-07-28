@@ -1,48 +1,69 @@
 import React, { Component } from 'react'
-import { Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux'
+import { RadioInput } from './RadioComponent';
+import { SaveAndContinue } from './SaveAndContinueComponent';
+import { EmailInput } from './EmailInputComponent';
 
 interface Props{
     dispatcher : any,
     questions : Array<any>
 }
 
-class SingleQuestionComponent extends Component<Props> {
+class QuestionComponent extends Component<Props> {
 
-    createRadios = () => {
+    createRadios = (data:any) => {
         const ret = [
             
-            <span className={"disagree"} key = {80}>Disagree</span>
+            <label className="disagree sideText">Disagree</label>
         ];
         for(let i = 0 ; i <7 ; i++){
             ret.push(
-                <input type="radio"  className="radio" name="test" key={i} />
+                <RadioInput name = {data.id} value ={i+1}/>
             );
         }
-        ret.push(<span className={ "agree" } key = {8}>Agree</span>);
+        ret.push(<label className="agree sideText">Agree</label>);
         return ret;
     }
-    render() {
-        const radios = this.createRadios();
-        return (
-            <Grid centered>
-                <Grid.Column className={"questionBox"}>
-                    <Grid.Row className={"questionTitle"}>
-                        You consider yourself more practical than creative.
-                    </Grid.Row>
-                    <Grid.Row className={"radioBox"}>
-                        <div style={{textAlign:"center"}}>
+
+    createQuestionBox = (data:any) => {
+        const radios = this.createRadios(data);
+        return(
+            <div className="ui text container bdr mrgn-tp eaual-spc center aligned form-container bdr-corner">
+                <div className="ui form">
+                    <span className="questionTitle">{data.title}</span>
+                    <div className="inline fields mrgn-tp20 sub-content">
                         {radios}
-                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    questions = () => {
+        let ret: Array<any> = [];
+        this.props.questions.map( (e,i) => {
+            ret.push(this.createQuestionBox(e));
+        } );
+
+        return ret ;
+    }
+    render() {
+        const questions = this.questions();
+        return (
+            <div className="main-container">
+                {questions}
+                <EmailInput/>
+                <SaveAndContinue/>
+                
+            </div>
+               
+                            
+                       
                        
                         
-                    </Grid.Row>
-                    <Grid.Row>
-                        <button onClick={this.props.dispatcher} />
-                    </Grid.Row>
-                </Grid.Column>
-                
-            </Grid>
+                 
+          
+          
         )
     }
 }
@@ -54,4 +75,4 @@ const mapStateToProps = (state:any, ownProps:any) => ({
 const mapDispatchToProps = (dispatch:Function) => ({
     dispatcher: () => dispatch({type : "CLICK" , value : "lol"})
 });
-export default connect(mapStateToProps,mapDispatchToProps)(SingleQuestionComponent);
+export default connect(mapStateToProps,mapDispatchToProps)(QuestionComponent);

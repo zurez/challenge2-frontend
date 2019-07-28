@@ -1,6 +1,90 @@
+body {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.main-container {
+	margin: 50px;
+}
+
+.form-container {
+  height: 127px !important;
+  width:740px !important;
+}
+
+.bdr {
+	border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  
+}
+
+
+.mrgn-tp {
+	margin-top: -1px
+}
+
+.mrgn-tp20 {
+	padding : 20px;
+}
+
+.eaual-spc {
+	padding: 20px;
+}
+
+.txt-center {
+	text-align: center;
+}
+
+
+
+.sub-content {
+	width: 360px;
+	margin: auto!important;
+}
+
+.custom-radio {
+	border: 2px solid #888!important
+}
+
+.ui.checkbox input:checked~.box:before,
+.ui.checkbox input:checked~label:before {
+	background: #fff;
+	border: 2px solid #acacac!important;
+}
+
+.ui.checkbox .box:before,
+.ui.checkbox label:before {
+	border: 2px solid #acacac!important;
+	width: 18px!important;
+	height: 18px!important;
+}
+
+.ui.radio.checkbox .box:after,
+.ui.radio.checkbox label:after {
+	top: 1px;
+	left: 0;
+	width: 18px!important;
+	height: 18px!important;
+	border-radius: 500rem;
+	-webkit-transform: scale(.46666667);
+	transform: scale(.46666667);
+	background-color: rgba(0, 0, 0, .87);
+}
+
+.ui.form .inline.fields .field {
+	margin: 0;
+	padding: 0 0.6em 0 0!important;
+}
+
+.custom-button {
+	background: #3d59f8!important;
+	font-size: 12px!important;
+	color: #fff!important
+}
+
 .questionBox{
-  background: #FFFFFF;
-  border: 1px solid #E5E5E5;
+  
   box-sizing: border-box;
   border-radius: 4px;
   height: 127px !important;
@@ -8,43 +92,43 @@
 }
 
 .questionTitle{
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
+
+  color: #4a4e51;
+  font-size: 18px !important;
+  line-height: 25px !important;
   text-align: center;
 }
 
-.radioBox{
-  height: 30px;
-  width: 570px;
-}
 
-.radio{
-  margin : 2%;
-  vertical-align: middle;
- 
+.sideText{
+  
+  font-size: 14px !important;
+  line-height: 19px !important;
+  text-align: right;
+  vertical-align: middle !important;
 }
-
 .disagree{
-  font-family: Nunito;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 19px;
-text-align: right;
+  color: #FA4344 !important;
 
-color: #FA4344;
-vertical-align: middle !important;
 }
 .agree{
-  font-family: Nunito;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 19px;
+  color: #00A079 !important;
+}
 
-color: #00A079;
+.emailInput{
+  background: #FFFFFF !important;
+  border: 2px solid #AAAAAA !important;
+  box-sizing: border-box !important;
+  border-radius: 4px !important;
+}
 
+.SCButton{
+	font-family: Roboto !important;
+	font-style: normal !important;
+	font-weight: 500 !important;
+	font-size: 16px !important;
+	line-height: 19px;
+	text-align: center;
+
+	color: #FFFFFF;
 }
