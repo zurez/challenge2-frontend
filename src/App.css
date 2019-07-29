@@ -165,3 +165,48 @@ body {
 	margin-right: auto !important;
 	height: 270px;
 }
+
+.align-box{
+	border-radius: 0px 3px 3px 0px;
+
+	padding: 0px!important;
+	height: 14.46px;
+	margin-top: 16px;
+	width: 110px;
+}
+.grey-bg {
+	background: #ccc;
+	
+}
+
+.purple-bg {
+	background: #A920CB;
+
+}
+
+.result-title {
+	font-size: 26px;
+	line-height: 30px;
+	color: #113264;
+}
+.result-subtitle {
+	font-size: 16px;
+	line-height: 19px;
+	padding-top : 10px;
+	color: #343A40;
+
+}
+
+.box-titles {
+	font-size: 14px;
+	line-height: 20px;
+	/* or 20px */
+
+
+	color: #878787;
+
+}
+.ui.grid>.row>.ui.segment.column, .ui.grid>.ui.segment.column, .ui.page.grid.segment {
+    padding-top:4.5em !important;
+    padding-bottom: 2em;
+}
