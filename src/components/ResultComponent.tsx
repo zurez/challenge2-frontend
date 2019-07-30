@@ -10,22 +10,22 @@ interface Props{
 
 const dimensions = [
     {
-        title: ['Introversion(I)','Extraversion(E)'],
+        title: ['Introversion (I)','Extraversion (E)'],
         letter: ['I','E']
     },
    
     {
-        title: ['Sensing(S)','Intuition(N)'],
+        title: ['Sensing (S)','Intuition (N)'],
         letter: ['S','N']
     },
     
     {
-        title: ['Thinking(T)','Feeling(F)'],
+        title: ['Thinking (T)','Feeling (F)'],
         letter: ['T','F']
     },
     
     {
-        title: ['Judging(J)','Perceiving(P)'],
+        title: ['Judging (J)','Perceiving (P)'],
         letter: ['J','P']
     }
 ];
@@ -59,22 +59,22 @@ class ResultComponent extends Component<Props> {
         const boxes = this.render_boxes();
         return (
             <div className="main-container">
-    <div className="ui text bdr mrgn-tp eaual-spc center aligned bdr-corner">
-        <div className="ui form">
+                <div className="ui text bdr mrgn-tp eaual-spc center aligned bdr-corner">
+                    <div className="ui form">
 
-            <div className="ui grid">
-                <div className="four wide column ui basic segment">
-                    <div className="result-title roboto">Your Perspective</div>
-                    <div className="result-subtitle roboto">Your Perspective Type is {this.props.result}</div>
-                </div>
-                <div className="eight wide column right floated">
-                   {boxes}
+                        <div className="ui grid">
+                            <div className="four wide column ui basic segment">
+                                <div className="result-title roboto">Your Perspective</div>
+                                <div className="result-subtitle roboto">Your Perspective Type is {this.props.result}</div>
+                            </div>
+                            <div className="eight wide column right floated">
+                            {boxes}
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-
-        </div>
-    </div>
-    </div>
         )
     }
 }
